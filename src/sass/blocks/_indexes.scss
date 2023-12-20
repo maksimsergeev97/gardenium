@@ -1,0 +1,72 @@
+.indexes {
+    position: relative;
+    height: 100vh;
+    background-color:$base-color;
+    &-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-descr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50vw;
+        text-align: center;
+    }
+    &-title {
+        font-weight: 100;
+        font-size: 3rem;
+        color: $second-color;
+    }
+    &-subtitle {
+        color: $third-color;
+        font-size: 1rem;
+    }
+    &-box {
+        width: 50%;
+        height: 100vh;
+        background-color: #F3F1E7;
+        display: flex;
+        align-items: center;
+        &-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 7rem;
+            margin-top: 100px;
+            margin-left: 180px;
+            &-item {
+                position: relative;
+                &::before {
+                    content: '';
+                    width: 200px;
+                    height: 3px;
+                    background-color: $second-color;
+                    position: absolute;
+                    left: -240px;
+                    top: 30px;
+                }
+                &-title {
+                    font-size: 5rem;
+                    font-weight: 100;
+                    letter-spacing: 0.075em;
+                    color: $base-color;
+                    line-height: 0.8em;
+                }
+                &-subtitle {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+                    letter-spacing: 0.075em;
+                    color: $fourth-color;
+                }
+            }
+        }
+    }
+    .oversize {
+        font-size: 11rem;
+        line-height: 1;
+    }
+}

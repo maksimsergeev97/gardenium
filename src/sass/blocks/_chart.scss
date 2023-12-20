@@ -1,0 +1,35 @@
+.chart {
+    height: 100vh;
+    &-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+    &-box {
+        text-align: center;
+        padding: 100px 30px 0 30px;
+        width: 50%;
+    }
+    &-descr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 150px;
+        background-color: $base-color;
+        width: 50%;
+        height: 100%;
+        .title {
+            color: $second-color;
+        }
+    }
+}
+
+.chart-2 {
+    .chart-descr {
+        padding: 0 100px;
+        &-title {
+            font-size: 3.5rem;
+        }
+    }
+}

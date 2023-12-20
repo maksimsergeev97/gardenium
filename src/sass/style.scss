@@ -1,0 +1,55 @@
+@import 'base/variables';
+@import 'base/text';
+@import 'base/scrollbar';
+@import 'base/animation';
+
+@import 'blocks/cursor';
+@import 'blocks/aside';
+@import 'blocks/menu';
+@import 'blocks/header';
+@import 'blocks/promo';
+@import 'blocks/indexes';
+@import 'blocks/solutions';
+@import 'blocks/chart';
+@import 'blocks/footer';
+@import 'blocks/page';
+
+@import 'blocks/media';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+      background-color: $bg-color;
+}
+
+.container {
+    width: 100%;
+    max-width: 1288px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+}
+
+.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.active {
+    color: $second-color !important;
+}
+
+.overflow {
+    overflow: hidden;
+}

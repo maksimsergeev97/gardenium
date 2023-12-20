@@ -1,0 +1,439 @@
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 300px) 
+  and (max-device-width: 812px) { 
+
+    html {
+        scroll-snap-type: none;
+    }
+    
+    .cursor, .aura {
+        display: none;
+    }
+
+    .header {
+
+        &-logo {
+            height: 80px;
+            width: 150px;
+        }
+    }
+    .promo {
+        background: $base-color;
+        .blackout {
+            display: none;
+        }
+    }
+    .dots {
+        display: none;
+    }
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 300px) 
+  and (max-device-width: 812px) 
+  and (orientation: portrait) { 
+   
+    .burger-menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: end;
+    }
+    .burger-menu {
+        display: block;
+    }
+    .header, .header-page {
+        position: relative;
+        background-color: $base-color;
+        .menu, .menu-page {
+            justify-content: center;
+            &-list {
+                display: none;
+            }
+        }
+        &-logo {
+            height: 80px;
+            width: 150px;
+        }
+    }
+    .promo {
+        height: calc(100vh - 130px);
+        &-video {
+            position: static;
+        }
+        &-wrapper {
+            flex-direction: column;
+            gap: 50px;
+            position: static;
+            padding: 30px;
+            width: auto;
+            transform: none;
+            
+        }
+        &-title{ 
+            font-size: 1.6rem;
+            width: auto;
+        }
+        &-descr {
+            &-link {
+                margin-bottom: 20px;
+                font-size: 1.2rem;
+                width: auto;
+            }
+        }
+    }
+
+    .body-menu {
+        display: none;
+    }
+
+    .indexes {
+        height: auto;
+        &-wrapper {
+            flex-direction: column-reverse;
+        }
+        &-descr {
+            width: 100%;
+            padding: 150px 0;
+        }
+        &-box {
+            padding: 50px 0;
+            width: 100%;
+            height: auto;
+            &-list {
+                margin-top: 0;
+            }
+        }
+        &-title {
+            .oversize {
+                font-size: 10rem;
+            }
+        }
+    }
+
+    .solutions {
+        height: auto;
+        flex-direction: column;
+        &-descr {
+            padding: 50px 30px;
+            .title {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+            .subtitle {
+                text-align: center;
+            }
+        }
+        &-box {
+            flex-direction: column;
+        }
+        &-item {
+            height: 40vh;
+            width: 100%;
+            &-blur {
+                backdrop-filter: none;
+            }
+        }
+    }
+
+    
+    .chart, .chart-2 {
+        height: auto;
+        &-wrapper {
+            flex-direction: column-reverse;
+        }
+        &-descr {
+            width: 100%;
+            padding: 150px 30px;
+            text-align: center;
+            .title {
+                font-size: 3rem;
+            }
+        }
+        &-box {
+            width: 100%;
+            padding: 50px 30px;
+            .title {
+                font-size: 3rem;
+            }
+        }
+    }
+    .chart-2 {
+        .chart-wrapper {
+            flex-direction: column;
+        }
+        .chart-descr {
+            padding: 100px 30px;
+            .title {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .footer {
+        padding-top: 0;
+        padding-bottom: 100px;
+        &-wrapper {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        &-logo {
+            width: 250px;
+        }
+        &-menu {
+            display: none;
+        }
+        &-descr {
+            gap: 10px;
+        }
+        .link-top {
+            bottom: 10px;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+
+    .page {
+        .title-wrapper-page {
+            display: flex;
+            flex-direction: column-reverse;
+            height: auto;
+            .title-block {
+                position: static;
+                transform: none;
+                width: 100%;
+            }
+            .title-img {
+                height: 200px;
+                width: 100%;
+            }
+        }
+    }
+    .footer-page {
+        &-wrapper {
+           flex-direction: column; 
+        }
+        &-logo {
+            display: block;
+            margin: 0 auto;
+        }
+        .footer-menu {
+            display: none;
+        }
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (orientation: landscape) { 
+
+    .header {
+        background: rgba(0, 0, 0, 0.3);
+        background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%);
+        &-logo {
+            height: 80px;
+            width: 150px;
+        }
+        .menu {
+            &-list {
+                width: 70%;
+            }
+            &-item-link {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .menu-page{
+        .header-page-logo {
+            height: 80px;
+            width: 150px;
+        }
+        .menu {
+            &-list {
+                width: 70%;
+            }
+            &-item-link {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .promo {
+        height: 100vh;
+        position: relative;
+        &-wrapper {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%,  rgba(0,0,0,0.6) 100%);
+            padding: 0 30px;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            transform: none;
+            gap: 50px;
+        }
+        &-title{ 
+            font-size: 2.5rem;
+        }
+        &-descr {
+           display: none;
+        }
+    }
+    .body-menu {
+        &-logo {
+            height: 60px;
+        }
+        .menu-list {
+            width: 70%;
+        }
+        .menu-item-link {
+            font-size: 0.8rem;
+        }
+    }
+    .indexes {
+        &-title {
+            font-size: 2rem;
+            .oversize {
+                font-size: 10rem;
+            }
+        }
+        &-box {
+            &-list {
+                gap: 50px;
+                margin-top: 0;
+                &-item{
+                    &-title{
+                        font-size: 4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .solutions {
+        &-descr {
+            padding: 0 30px;
+            .title {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 0.7rem;
+            }
+        }
+        &-item {
+            &-title {
+                font-weight: 500;
+                font-size: 1.1rem;
+            }
+            &-blur {
+                padding: 30px;
+                backdrop-filter: none;
+            }
+        }
+    }
+
+    
+    .chart, .chart-2 {
+        &-descr {
+            width: 50%;
+            padding: 150px 30px;
+            text-align: center;
+            .title {
+                font-size: 3rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+        &-box {
+            width: 50%;
+            padding: 0;
+            .title {
+                font-size: 2.5rem;
+            }
+        }
+    }
+    .chart-2 {
+        .chart-descr {
+            padding: 100px 30px;
+            .title {
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+        .chart-box {
+            .title {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .page {
+        .title-wrapper-page {
+            height: 70vh;
+        }
+        .title-block {
+            .title {
+                font-size: 2rem;
+            }
+            .descr {
+                font-size: 0.9rem;
+            }
+        }
+        .descr-wrapper {
+            .descr {
+                font-size: 0.7rem;
+            }
+            .descr-list-item {
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    .footer {
+        &-menu {
+            display: none;
+        }
+        .link-top {
+            bottom: 0;
+            right: 20px;
+            &-img {
+                width: 50px;
+            }
+        }
+    }
+
+
+
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) {
+
+}
