@@ -12,7 +12,8 @@ const startDate = date.map((item,i) => {
 
 const keySP500 = 'db8b6f2482735a08cb3c18826a9f404d',
       keyEuro = 'c5059cd7104fd2d8d1faf1955d13ac78',
-      baseFetch = 'http://localhost:9999/api.stlouisfed.org/fred/series/observations'
+      // baseFetch = 'http://localhost:9999/api.stlouisfed.org/fred/series/observations'
+      baseFetch = 'https://cors-anywhere.herokuapp.com/https://api.stlouisfed.org/fred/series/observations'
 
 function createChart(id, key, selector, label) {
   const arrPrices = [],
@@ -59,7 +60,7 @@ function createChart(id, key, selector, label) {
               color: '#A59F6D',
               font: {
                 weight: 700,
-                size: 10
+                size: 12
               }
             },
             border: {
