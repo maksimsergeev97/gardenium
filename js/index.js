@@ -1,6 +1,15 @@
 'use strict'
 // import { gsap } from "gsap";
 
+const preloader = document.querySelector('.preloader');
+
+const timer = setTimeout(() => {
+  preloader.classList.add('hide');
+  document.body.classList.remove('overflow')
+  clearTimeout(timer);
+}, 1000)
+
+
 const date = new Date().toLocaleDateString().split('.').reverse();
 const endDate = date.join('-');
 const startDate = date.map((item,i) => {
@@ -99,6 +108,8 @@ function createChart(id, key, selector, label) {
         }
       }
     });
+  }).catch(error => {
+    console.log(error)
   })
   Chart.defaults.borderColor = '#fff';
   Chart.defaults.font.size = 14;
