@@ -29,10 +29,10 @@ function createChart(id, key, selector, label) {
   const arrPrices = [],
         arrDates = [];
 
-  fetch(`${baseFetch}?series_id=${id}&frequency=m&api_key=${key}&file_type=json&observation_start=${startDate}&observation_end=${endDate}`,{
+  fetch(`${baseFetch}?series_id=${id}&frequency=m&api_key=${key}&file_type=json&observation_start=2024-01-01&observation_end=2024-07-01`,{
     headers: {
       "Origin" : "https://maksimsergeev97.github.io/gardenium",
-      "X-Requested-With": "XMLHttpRequest"
+      "X-Requested-With": "XMLHttpRequest",
     },
   }).then((response) => {
     return response.json()
