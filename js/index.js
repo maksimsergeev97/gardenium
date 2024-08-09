@@ -29,7 +29,11 @@ function createChart(id, key, selector, label) {
   const arrPrices = [],
         arrDates = [];
 
-  fetch(`${baseFetch}?series_id=${id}&frequency=m&api_key=${key}&file_type=json&observation_start=${startDate}&observation_end=${endDate}`).then((response) => {
+  fetch(`${baseFetch}?series_id=${id}&frequency=m&api_key=${key}&file_type=json&observation_start=${startDate}&observation_end=${endDate}`,{
+    headers: {
+      "X-Requested-With": "XMLHttpRequest"
+    }
+  }).then((response) => {
     return response.json()
 }).then(data => data.observations.map((item, i)=> {
     if(item.value !== '.') {
