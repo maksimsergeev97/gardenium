@@ -11,13 +11,14 @@ const timer = setTimeout(() => {
 
 
 const date = new Date().toLocaleDateString().split('.').reverse();
+const getPreviousDate = (months) => {
+  const date = new Date();
+  date.setMonth(date.getMonth() - months);
+  return date;
+}
+
 const endDate = date.join('-');
-const startDate = date.map((item,i) => {
-  if(i === 0) {
-    return item - 1;
-  }
-  return item
-}).join('-');
+const startDate = getPreviousDate(6).toLocaleDateString().split('.').reverse().join('-')
 
 const keySP500 = 'db8b6f2482735a08cb3c18826a9f404d',
       keyEuro = 'c5059cd7104fd2d8d1faf1955d13ac78',
@@ -28,7 +29,7 @@ function createChart(id, key, selector, label) {
   const arrPrices = [],
         arrDates = [];
 
-  fetch(`${baseFetch}?series_id=${id}&frequency=m&api_key=${key}&file_type=json&observation_start=${'2023-01-01'}&observation_end=${endDate}`).then((response) => {
+  fetch(`${baseFetch}?series_id=${id}&frequency=m&api_key=${key}&file_type=json&observation_start=${startDate}&observation_end=${endDate}`).then((response) => {
     return response.json()
 }).then(data => data.observations.map((item, i)=> {
     if(item.value !== '.') {
@@ -130,6 +131,11 @@ const indexBoxList = document.querySelector('.indexes-box-list');
 const chartBoxes = document.querySelectorAll('.chart-box');
     
 const bodyMenu = document.querySelector('.body-menu');
+const bodyMenuHide = document.querySelector('.body-menu-hide');
+
+bodyMenuHide.addEventListener('click', () => {
+  bodyMenu.classList.remove('show')
+})
 
 
 window.addEventListener('scroll', () => {
@@ -138,6 +144,8 @@ window.addEventListener('scroll', () => {
       item.classList.remove('dots-item-active');
     })
     asideDots[0].classList.add('dots-item-active');
+
+
 
 
   } else if (document.documentElement.scrollTop > 0 && document.documentElement.scrollTop < (heightOneSection + 1)) {
@@ -160,12 +168,13 @@ window.addEventListener('scroll', () => {
     })
     asideDots[3].classList.add('dots-item-active');
     chartBoxes[0].classList.add('animation-fade-in-bottom');
+    chartBoxes[1].classList.add('animation-fade-in-bottom');
   } else if (document.documentElement.scrollTop > (heightOneSection * 3 + 1) && document.documentElement.scrollTop < (heightOneSection * 4 + 1)) {
     asideDots.forEach(item => {
       item.classList.remove('dots-item-active');
     })
     asideDots[4].classList.add('dots-item-active');
-    chartBoxes[1].classList.add('animation-fade-in-bottom');
+    // chartBoxes[1].classList.add('animation-fade-in-bottom');
   }
 })
 
