@@ -22,19 +22,15 @@ const startDate = getPreviousDate(6).toLocaleDateString().split('.').reverse().j
 
 const keySP500 = 'db8b6f2482735a08cb3c18826a9f404d',
       keyEuro = 'c5059cd7104fd2d8d1faf1955d13ac78',
-      baseFetch = 'https://cors-anywhere.herokuapp.com/https://api.stlouisfed.org/fred/series/observations'
-      // baseFetch = 'https://aqueous-springs-31092-b4a99fbe31f7.herokuapp.com/https://api.stlouisfed.org/fred/series/observations'
-
+      // baseFetch = 'https://cors-anywhere.herokuapp.com/https://api.stlouisfed.org/fred/series/observations'
+      baseFetch = 'https://aqueous-springs-31092-b4a99fbe31f7.herokuapp.com/https://api.stlouisfed.org/fred/series/observations'
+console.log(endDate, startDate)
 function createChart(id, key, selector, label) {
   const arrPrices = [],
         arrDates = [];
 
-  fetch(`${baseFetch}?series_id=${id}&frequency=m&api_key=${key}&file_type=json&observation_start=2024-01-01&observation_end=2024-07-01`,{
-    headers: {
-      "Origin" : "https://maksimsergeev97.github.io/gardenium",
-      "X-Requested-With": "XMLHttpRequest",
-    },
-  }).then((response) => {
+  fetch(`${baseFetch}?series_id=${id}&frequency=m&api_key=${key}&file_type=json&observation_start=2024-01-01&observation_end=2024-07-01`)
+  .then((response) => {
     return response.json()
 }).then(data => data.observations.map((item, i)=> {
     if(item.value !== '.') {
